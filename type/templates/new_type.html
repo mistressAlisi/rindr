@@ -1,0 +1,20 @@
+{% extends 'dashboard.html' %}
+{% load django_bootstrap5 %}
+{% block bootstrap5_title %}
+Create New Type 
+{% endblock %}
+{%block dashboard_name %} Create Ticket Type {% endblock %}
+
+{% block dashboard_content %}
+    <form action="/type/new/create" method="post" class="form" id="type_form" onsubmit="create_type(); return false;">
+  {% csrf_token %}
+
+  {% bootstrap_form new_type %}
+
+  {% bootstrap_button button_type="submit" content="Create" %}
+  
+
+</form>
+ <script src="/static/js/type.js"></script>
+ 
+{% endblock %}

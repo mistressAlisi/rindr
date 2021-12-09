@@ -1,0 +1,1 @@
+CREATE OR REPLACE VIEW "ticket_meantimes" AS SELECT (responded-opened) AS mean_response,COUNT(1) AS ticket_count,(responded-opened) AS id from ticket_ticket GROUP BY mean_response ORDER BY ticket_count DESC;

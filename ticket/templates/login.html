@@ -1,0 +1,36 @@
+{% extends 'django_bootstrap5/bootstrap5.html' %}
+
+{% block bootstrap5_title %}
+Please Login     
+{% endblock %}
+
+{% block bootstrap5_content %}
+ <link href="/static/css/login.css" rel="stylesheet">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<main class="form-signin">
+  <form method="POST" onsubmit="go_login(); return false" target="#" id="loginForm">
+  {% csrf_token %}
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="username" name="username" placeholder="my_username">
+      <label for="floatingInput">User name</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
+  </form>
+</main>
+
+ <script src="/static/js/login.js"></script>
+ 
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends 'dashboard.html' %}
+{% load mathfilters %}
+{% block bootstrap5_title %}
+Ticketing System Dashboard   
+{% endblock %}
+{%block dashboard_exports %}
+          <div class="btn-group me-2">
+            <a href="/ticket/export/all_tickets.json">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            </a>
+          </div>
+          </button>
+{% endblock %}
+{% block dashboard_content %}
+      <div class="container-flex">
+        <div class="row">
+            <div class="col-4">
+            {% include "dashboard_chart_1.html" %}
+            </div>
+            
+             <div class="col-7 col-xl-8">
+            {% include "dashboard_chart_2.html" %}
+            </div>
+            
+           
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <h2>Last 10 Tickets</h2>
+      <div class="table-responsive">
+         <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Type</th>
+              <th scope="col">Affirmer</th>
+              <th scope="col">Opened</th>
+              <th scope="col">Responded</th>
+              <th scope="col">Response Time</td>
+              <th scope="col">Reference</td>
+              <th scope="col">Contributors</th>
+              <th scope="col">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for ticket in ticket_data %}
+                <tr>
+                <td><a href="/ticket/{{ticket.id}}">#{{ticket.id}}</a></td>
+                <td><a href="/type/{{ticket.type.id}}">{{ticket.type.label}}</a></td>
+                <td>{{ticket.affirmer}}</td>
+                <td>{{ticket.opened|date:"Y/m/d H:i:s"}}</td>
+                <td>{{ticket.responded|date:"Y/m/d H:i:s"}}</td>
+                <td>{{ ticket.responded|sub:ticket.opened }}</td>
+                <td><a href="{{ticket.reference}}" target="_blank">Open</a></td>
+                <td>{{ticket.contributors}}</td>
+                <td>{{ticket.notes}}</td>
+                </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js" integrity="sha256-bC3LCZCwKeehY6T4fFi9VfOU0gztUa+S4cnkIhVPZ5E=" crossorigin="anonymous"></script>
+      
+      <script src="/static/js/dashboard.js"></script>
+  
+
+
+ 
+{% endblock %}

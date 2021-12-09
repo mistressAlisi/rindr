@@ -1,0 +1,69 @@
+sequence number	reference to dialogue	questioner-developer	keywords	timestamp of initial request	timestamp of initial response				
+1	https://mattermost.team.affirm.com/affirm/pl/4mjhgtcii7gcmm5o195aw74her	Richard Hsu	crm	10/7/2021 7:35:00	10/7/2021 8:35:00	Chris Reyes, Bridget, Fan	ODIN unreliability:  restart clears	1:00:00	
+2	https://mattermost.team.affirm.com/affirm/pl/mtyp6fxr43r8mxk36iy1uzgi5c	Aaron	redeploy branch	10/7/2021 11:19:00	10/7/2021 11:27:00	Tony Cheang, Tyson, Mayank	Fully-qualified ODIN_ID	0:08:00	
+3	https://mattermost.team.affirm.com/affirm/pl/h8ig74xcxfg478w44834t86kko	Oleksandr Filonenko	storage	10/7/2021 11:53:00	outside"ODINStatus"?	? (Cameron)	shared storage	0	
+4	https://mattermost.team.affirm.com/affirm/pl/wugimueqstdm5mxxyp1yajxzxe	Jonathan Kim	deployment	10/12/2021 8:24:00	10/12/2021 9:40:00	Tyson	restart clears	1:16:00	
+5	https://mattermost.team.affirm.com/affirm/pl/q61y3nbfibys3xwsoiwpmm4oxy	Richard Hsu	celery	10/12/2021 8:31:00	10/12/2021 8:32:00	Jonathan Kim, Diana	Restart RabbitMQ into submission	0:01:00	
+6	https://mattermost.team.affirm.com/affirm/pl/gazgyjwsiirix8nkkjo7gn8hcc	Santiago	connectivity	10/12/2021 12:49:00	10/12/2021 13:20:00	Tyson	invalid request	0:31:00	
+7	https://mattermost.team.affirm.com/affirm/pl/jjat8z79ujd7pqfdfce1rouhfc	Avni	console output	10/12/2021 13:22:00	10/12/2021 13:25:00	Diana	usage	0:03:00	
+8	https://mattermost.team.affirm.com/affirm/pl/n7cp4o1xytyh5xgxgey3gbb34r	Stephen Dao	front end	10/13/2021 8:48:00	10/13/2021 9:05:00	Tyson, Diana	out of space	0:17:00	
+9	https://mattermost.team.affirm.com/affirm/pl/bmzh9at697r8tk75zodmq55rbw	shwetha	deployment	10/13/2021 9:24:00	10/13/2021 9:40:00	Tyson	salt ...	0:16:00	
+10	https://mattermost.team.affirm.com/affirm/pl/y5c41o17kbbnjc817oh65mrhge	Jonathan Kim	celery	10/14/2021 10:36:00	10/14/2021 10:36:00	Diana	restart	0:00:00	
+11	https://mattermost.team.affirm.com/affirm/pl/qj6qzae1rbyzbeuk5ng1f7emdy	Jacob Beck	create	10/14/2021 12:56:00	10/14/2021 12:57:00	Diana	restart	0:01:00	
+12	https://mattermost.team.affirm.com/affirm/pl/zzfagn96fbn18dyy6o91gk7xdw	John C.	Canada	10/14/2021 15:04:00	10/14/2021 15:05:00	Diana	apply Canada patch	0:01:00	
+13	https://mattermost.team.affirm.com/affirm/pl/qfi76y89ypdoprcy9f56hh5zsr	John C.	Canada	10/15/2021 7:45:00	10/15/2021 7:58:00	Cameron, Tyson, Diana	global fix	0:13:00	
+14	https://mattermost.team.affirm.com/affirm/pl/ab3qj5hknbb69r4nmdj15nhe4o	Jonathan Kim	freyja	10/15/2021 7:47:00	10/15/2021 9:20:00	Fan, Diana, Tyson	global fix	1:33:00	Once we're in Python, fix these times to only count during business hours.
+15	https://mattermost.team.affirm.com/affirm/pl/iqzxudfsc3fdmdyrcokb7hsg4w	Jacob Beck	hibernation	10/15/2021 9:43:00	10/15/2021 9:50:00	Fan, David Smith, Tyson	read the documentation	0:07:00	
+16	https://mattermost.team.affirm.com/affirm/pl/ot4n9qh5qpbb8rohxs4gmjkf7y	Arman	AMQPLAIN	10/15/2021 10:57:00	10/15/2021 10:58:00	Diana	global fix	0:01:00	
+17	https://mattermost.team.affirm.com/affirm/pl/3arkcu66yiypprkuawt18dxh1o	Eugene Eydln	AMQPLAIN	10/15/2021 12:15:00	10/15/2021 12:17:00	Diana	global fix	0:02:00	
+18	https://mattermost.team.affirm.com/affirm/pl/68x6zxctqbbsp8o4f5745s78na	David Smith	failure	10/15/2021 13:05:00	10/15/2021 13:07:00	Tyson	global fix	0:02:00	
+19	https://mattermost.team.affirm.com/affirm/pl/ebauiazdubgnub5n8ahhs3htrw	Jonathan Kim	AMQPLAIN	10/18/2021 8:10:00	10/18/2021 8:24:00	Cameron, Tyson, Diana	out of space	0:14:00	
+20	https://mattermost.team.affirm.com/affirm/pl/kw7rm5ooe7ddzqkzebnmxzx4hc	John C.	NoSuchKey	10/18/2021 8:43:00	10/18/2021 8:43:00	Cameron, Tyson, Diana		0:00:00	
+21	https://mattermost.team.affirm.com/affirm/pl/de8wg4txk3gsuktrxt4dn7ykeo	Aaron H	Mattermost	10/18/2021 14:01:00	10/18/2021 14:02:00	Teddy	documentation	0:01:00	
+22	https://mattermost.team.affirm.com/affirm/pl/otx6s5t5ojd1mkqcresiqx3jqr	Jacob Beck	Hackerone	10/18/2021 15:29:00	10/18/2021 15:32:00	Tyson, Bryan, Fan	documentation	0:03:00	
+23	https://mattermost.team.affirm.com/affirm/pl/64tcmpjmetr65b4tbadzc31tuc	Eugene Eydln	RPC	10/19/2021 7:13:00	10/19/2021 7:19:00	Cameron, Tyson	documentation	0:06:00	
+24	https://mattermost.team.affirm.com/affirm/pl/1fhu53fbftb7ddpxft4xresxaw	Ruqing	batch task	10/19/2021 10:06:00	10/19/2021 10:11:00	Tyson	redirect to Live Batch	0:05:00	
+25	https://mattermost.team.affirm.com/affirm/pl/fopcpcd3mtgtxgt8fobmrmgrce	Olivia	Rollbar	10/19/2021 10:27:00	10/19/2021 10:30:00	Bryan, Diana, Fan		0:03:00	
+26	https://mattermost.team.affirm.com/affirm/pl/zgr4xpfwdtyk8b76obhysw96jy	Perla	ssh	10/19/2021 13:15:00	10/19/2021 13:15:00	Diana	ssh configure	0:00:00	
+27	https://mattermost.team.affirm.com/affirm/pl/8mc8bejn3f81uf3rg1i64u8e9y	Fang	Canada	10/19/2021 13:35:00	10/19/2021 13:36:00	Bryan	documentation	0:01:00	
+28	https://mattermost.team.affirm.com/affirm/pl/tnoetzg45jr3jfqztp5qnm31cc	Caren	checkout	10/19/2021 15:40:00	10/19/2021 15:44:00	Diana, Tyson	restart	0:04:00	
+29	https://mattermost.team.affirm.com/affirm/pl/ffgcbbwb3byz7x5qiqphs6q4zy	Mykhailo Yusko	signin	10/20/2021 2:14:00	10/20/2021 7:13:00	Steve	documentation	4:59:00	
+30	https://mattermost.team.affirm.com/affirm/pl/hduq8rzwmfyobdzocw9bbttmdh	Oleh Hordiienko		10/20/2021 7:17:00	10/20/2021 9:03:00	Tyson	read logs	1:46:00	
+31	https://mattermost.team.affirm.com/affirm/pl/szo85crbg7dopp3f8i6c8kz8ic	Jacqui	500	10/20/2021 10:23:00	10/20/2021 10:24:00	Diana	documentation	0:01:00	
+32	https://mattermost.team.affirm.com/affirm/pl/nrx8o8kqzifqicqzhz5p3mp1ua	Stephen Dao	AMQPLAIN	10/20/2021 12:43:00	10/20/2021 12:44:00	Diana	restart	0:01:00	
+33	https://mattermost.team.affirm.com/affirm/pl/c4ab6am3d3g97dw4pymc3c769o	Kuda	frontend	10/20/2021 14:02:00	10/20/2021 14:03:00	Diana	read logs	0:01:00	
+34	https://mattermost.team.affirm.com/affirm/pl/tjozjtwm5ffk9kb4i3x3qmd8jh	Tony Cheang	502	10/20/2021 14:32:00	10/20/2021 14:52:00	Caren Guo	restart	0:20:00	
+35	https://mattermost.team.affirm.com/affirm/pl/rgbdh6o4hfyh3eht1k6jz3tbiw	Shaun	ssh	10/20/2021 15:27:00	10/20/2021 15:28:00	Bryan, Diana	documentation	0:01:00	
+36	https://mattermost.team.affirm.com/affirm/pl/wx54nrsfejf4unozn389aw687w	Helen Li	RPC	10/20/2021 15:30:00	10/20/2021 15:36:00	Diana	documentation	0:06:00	
+37	https://mattermost.team.affirm.com/affirm/pl/86gdqtafb3bcxcwjrg8w3kuxso	Fang	Canada	10/20/2021 16:11:00	10/20/2021 16:31:00	Tyson	documentation	0:20:00	
+38	https://mattermost.team.affirm.com/affirm/pl/u9ke5hbk7tdhfnbn8ybsy1gdwr	Kuda	frontend	10/20/2021 16:22:00	10/20/2021 16:25:00	Cameron, Fan	operator error	0:03:00	
+39	https://mattermost.team.affirm.com/affirm/pl/wq3tcirmmtng3mbzro9rw1947w	Perla	git	10/20/2021 17:37:00	10/20/2021 17:49:00	Cameron		0:12:00	
+40	https://mattermost.team.affirm.com/affirm/pl/wq3tcirmmtng3mbzro9rw1947w	Kuda	ODIN	10/21/2021 9:33:00	10/21/2021 9:35:00	Bryan, Cameron, Fan		0:02:00	
+41	https://mattermost.team.affirm.com/affirm/pl/r6je8cf3af8jfn73h4paozk91y	Shawn K	RPC	10/21/2021 9:57:00	10/21/2021 10:24:00	Helen Li	documentation	0:27:00	
+42	https://mattermost.team.affirm.com/affirm/pl/93bd8hpmmtnx9xdcxzr3qqykjc	Jacqui	500	10/21/2021 10:23:00	10/21/2021 10:24:00	Diana	misconfiguration	0:01:00	
+43	https://mattermost.team.affirm.com/affirm/pl/4koix91pdibpbc5dbqfamw1igh	Perla	direct checkout button	10/21/2021 13:26:00	10/21/2021 13:30:00	Cameron, Fan	misconfiguration	0:04:00	
+44	https://mattermost.team.affirm.com/affirm/pl/x35s7q7pzfyfp8oqcoaonx31ch	Vicky Liao	branch	10/21/2021 14:52:00	10/21/2021 14:54:00	da axp daniel	misconfiguration	0:02:00	
+45	https://mattermost.team.affirm.com/affirm/pl/ywkf5zygb7rjdn6cdromksuy4e	Tony Cheang	signup	10/21/2021 15:35:00	10/22/2021 14:55:00	Cameron, Caren Guo	documentation	23:20:00	
+46	https://mattermost.team.affirm.com/affirm/pl/fwqydq9bdbbzjkbybta8pxibae	Oleksandr Filonenko	deployment	10/22/2021 9:00:00	10/22/2021 9:01:00	Fan	out-of-space; pruning helped	0:01:00	
+47	https://mattermost.team.affirm.com/affirm/pl/gg3xxz1h3bf3jxucxduehreo6o	Lydia Choi	stoppage	10/22/2021 9:50:00	10/22/2021 9:51:00	Diana	reboot	0:01:00	
+48	https://mattermost.team.affirm.com/affirm/pl/df3po1g5eiggtc6x9ky6cd8u9h	Jacqui	500	10/22/2021 10:30:00	10/22/2021 10:34:00	Cameron, Jacob, Diana		0:04:00	
+49	https://mattermost.team.affirm.com/affirm/pl/4s5fpf8k8tf8jjbcg9ab4swxir	Jacob Beck	KeyError	10/22/2021 11:32:00	10/22/2021 11:34:00	Cameron	loan mod team	0:02:00	
+50	https://mattermost.team.affirm.com/affirm/pl/ez77p4aautnhfkzfh1cmn61qpo	Esteban Barboza	slow build	10/25/2021 10:24:00	10/25/2021 10:24:00	Cameron, Diana	odin.stale failure	0:00:00	
+51	https://mattermost.team.affirm.com/affirm/pl/sjwqn47gktn1djiwdudgsp9hya	Cassie	timeout	10/25/2021 11:27:00	10/25/2021 11:27:00	Diana	documentation:  ODIN name	0:00:00	
+52	https://mattermost.team.affirm.com/affirm/pl/u7rwqp4d73ygjeusxk8imdr9ic	Helen Li	signup issues	10/25/2021 12:27:00	10/25/2021 12:33:00	Tyson, Bryan	out of scope?	0:06:00	
+53	https://mattermost.team.affirm.com/affirm/pl/s1ch38fdsifcbb8d3fuhm8ubbc	Elle	direct checkout	10/25/2021 12:27:00	10/25/2021 12:27:00	Diana	operator error?	0:00:00	
+54	https://mattermost.team.affirm.com/affirm/pl/wd8gsidwzpru8xsidpaoyojtpe	Fang	e2e checkout	10/25/2021 15:17	10/25/2021 15:17:00	Fan	Infrastructure	0:00:00	
+55	https://mattermost.team.affirm.com/affirm/pl/zjkni996tpd8zx5iaaxtdwk46h	morz	redeploy fails on RabbitMQ	10/26/2021 9:47:00	10/26/2021 9:48:00	Diana	confused DT?	0:01:00	
+56	https://mattermost.team.affirm.com/affirm/pl/1huha7y8ebbwtrbwep8o4s84ko	morz	ACCESS_REFUSED	10/26/2021 14:03:00	10/26/2021 14:03:00	Cameron, Diana	salt and rabbitmq	0:00:00	
+57	https://mattermost.team.affirm.com/affirm/pl/a6jpoynhutrpipff74ifmep7aa	morz	identity orchestration	10/26/2021 14:15:00	10/26/2021 14:23:00	Cameron, Fan, Tyson	out of scope	0:08:00	
+58	https://mattermost.team.affirm.com/affirm/pl/c3q6gcd1bbdad8sa1ife8oye7y	John C.	signup SMS; Kibana	10/27/2021 11:03:00	10/27/2021 11:06:00	Cameron, Fan	operator error	0:03:00	
+59	https://mattermost.team.affirm.com/affirm/pl/pd94qpujtjnymnd4g667mwqdhy	Jonathan Kim	connection lost	10/27/2021 13:58	10/27/2021 14:01	Diana, Fan, Cameron	operator error?	0:03:00	
+60	https://mattermost.team.affirm.com/affirm/pl/6muy79dcztn95pzgdo9514yjbw	Fang	tests; Canada	10/28/2021 9:47:00	10/28/2021 9:48:00	Cameron, Fan	clears on reset	0:01:00	
+61	https://mattermost.team.affirm.com/affirm/pl/umpqgzc7epbnmbpjitfa1cobkw	Rohan Nagalkar	freyja slow	10/28/2021 11:38	10/28/2021 11:40:00	Tyson	clears on reset	0:02:00	
+62	https://mattermost.team.affirm.com/affirm/pl/cusygcca4j8rtkbbujg79q4sry	Olivia	identity	10/28/2021 12:09	10/28/2021 12:17:00	Bryan, Tyson	various restarts	0:08:00	
+63	https://mattermost.team.affirm.com/affirm/pl/gsofuskssjrgix163e1sdft5ya	Shriya	freyja slow	10/28/2021 14:48	10/28/2021 14:50	Cameron	wait	0:02:00	
+64	https://mattermost.team.affirm.com/affirm/pl/gdqgo4i14i8c3pup7pffcoxq6h	Shriya	Web pages slow	10/28/2021 15:07	10/28/2021 15:09	Cameron, Tyson	reconfigure worker processes	0:02:00	
+65	https://mattermost.team.affirm.com/affirm/pl/38qniu3aytgymj4b5d3nq69m5a	Shriya	close account	10/28/2021 15:35	10/28/2021 15:37	Cameron, Tyson	"Close Test User" button	0:02:00	
+66	https://mattermost.team.affirm.com/affirm/pl/bcfzemdjx3gwmdju3346tie8qe	Shriya	404	10/29/2021 5:57	10/29/2021 6:09:00	Cameron	reboot	0:12:00	
+67	https://mattermost.team.affirm.com/affirm/pl/wk8mtrcyofd7irhczds4zybbmw	Lingene	salt error	10/29/2021 10:52	10/29/2021 10:59:00	Diana, Bryan, Cameron	deployment, not us:  redeploy with salt-dev branch	0:07:00	
+68	https://mattermost.team.affirm.com/affirm/pl/3qdxxnu8u3y4jk3ifu8xytshac	Shriya	403, timeouts, ...	10/29/2021 15:25	10/29/2021 15:26	Diana		0:01:00	
