@@ -4,7 +4,7 @@ from ticket.models import Ticket
 from type.models import Type
 
 class Command(BaseCommand):
-    help = 'Ingets (Imports) the specified CSV ticket file.'
+    help = 'Ingets (Imports) the specified TSV ticket file.'
 
     def add_arguments(self, parser):
         parser.add_argument('ifile', nargs='+', type=str)
@@ -18,21 +18,38 @@ class Command(BaseCommand):
                 for row in filereader:
                     if (count > 0):
                        # ONLY ingest clean data!!! #
-                       if (len(row) == 10):
+                       #print(len(row))
+                       #print(row[2])
+                       if (len(row) == 11):
                            # First, create or get the type:
-                           itm_type = Type.objects.get_or_create(label=row[3])[0]
+                           itm_type = Type.objects.get_or_create(label=row[4])[0]
+                           create = True
                            try:
-                                opened = datetime.datetime.strptime(row[4], '%m/%d/%Y %H:%M:%S')
-                                responded = datetime.datetime.strptime(row[5], '%m/%d/%Y %H:%M:%S')
-                           except:
-                               self.stdout.write(self.style.WARNING('Row %s does not contain correct timestamps for open and responded, skipping...'%row[0]))
-                           else:
-                               self.stdout.write(self.style.MIGRATE_LABEL('Row %s being ingested...'%row[0]))
+                                opened = datetime.datetime.strptime(row[5], '%m/%d/%Y %H:%M:%S')
+                                #responded = datetime.datetime.strptime(row[6], '%m/%d/%Y %H:%M:%S')
+                           except Exception as e:
+                               try:
+                                   opened = datetime.datetime.strptime(row[5], '%m/%d/%Y %H:%M')
+                               except Exception as e:
+                                   #responded = datetime.datetime.strptime(row[6], '%m/%d/%Y %H:%M')
+                                   self.stdout.write(self.style.WARNING('Row %s does not contain correct timestamps for open: skipping...'%row[0]))
+                                   create = False
+                           try:
+                                #opened = datetime.datetime.strptime(row[5], '%m/%d/%Y %H:%M:%S')
+                                responded = datetime.datetime.strptime(row[6], '%m/%d/%Y %H:%M:%S')
+                           except Exception as e:
+                               try:
+                                   responded = datetime.datetime.strptime(row[5], '%m/%d/%Y %H:%M')
+                               except Exception as e:
+                                   #responded = datetime.datetime.strptime(row[6], '%m/%d/%Y %H:%M')
+                                   self.stdout.write(self.style.WARNING('Row %s does not contain correct timestamps for responded: skipping...'%row[0]))
+                                   create = False                               
+                           if create is True:
                            # Then create the ticket:
-                           tkt = Ticket.objects.create(type=itm_type,opened=opened,responded=responded,affirmer=row[2],contributors=row[6],notes=row[7],reference=row[1],fix=row[7])
-                           itm_type.tickets += 1
-                           itm_type.updated = datetime.datetime.now()
-                           itm_type.save()
+                               tkt = Ticket.objects.create(type=itm_type,opened=opened,responded=responded,affirmer=row[2],contributors=row[7],notes=row[8],reference=row[1],fix=row[8])
+                               itm_type.tickets += 1
+                               itm_type.updated = datetime.datetime.now()
+                               itm_type.save()
                            #tkt.save()                           
                     count += 1
             self.stdout.write(self.style.SUCCESS('Successfully Ingested File "%s":  records.' % file_name))

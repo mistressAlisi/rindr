@@ -24,7 +24,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['d858-54-209-167-118.ngrok.io','localhost','localhost:6000']
 
 
 # Application definition
@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'jquery',
     'dashboard',
-    'mathfilters',
-    'BI'
+    'mathfilters'
+    
 ]
 
 MIDDLEWARE = [
@@ -85,18 +85,16 @@ WSGI_APPLICATION = 'rindr.wsgi.application'
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
 #}
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rindr',
-        'USER': 'rindr',
-        'PASSWORD': 'freya',
-        'HOST': '10.100.102.161',
-        'PORT': ''
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config("DATABASE_NAME"),
+        'USER': config("DATABASE_USER"),
+        'PASSWORD': config("DATABASE_PASSWORD"),
+        'HOST': config("DATABASE_HOST"),
+        'PORT': config("DATABASE_PORT"),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

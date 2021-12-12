@@ -1,16 +1,20 @@
 {% extends 'django_bootstrap5/bootstrap5.html' %}
 
 {% block bootstrap5_title %}
-Please Login     
+Rindr Dashboard     
 {% endblock %}
 
 {% block bootstrap5_content %}
 <link href="/static/css/dashboard.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ballet&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,800&display=swap" rel="stylesheet"> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">INFRA Support Ticketing System</a>
+
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">    <img class="img-fluid" src="/static/resources/img/Rindr.png" style="max-height: 40px; position: relative; top: -7px;" alt="Rindr"/>&#160;Rindr</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

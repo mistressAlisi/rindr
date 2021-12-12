@@ -1,0 +1,83 @@
+{% extends 'dashboard.html' %}
+{% load mathfilters %}
+{% block bootstrap5_title %}
+Ticket View: # {{ticket.id}}
+{% endblock %}
+{% block dashboard_name %}Ticket view: # {{ticket.id}} {% endblock %}
+{%block dashboard_exports %}
+          <div class="btn-group me-2">
+            <a href="/type/export/tickets_type-{{ticket.id}}.json">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            </a>
+          </div>
+          </button>
+{% endblock %}
+
+{% block dashboard_content %}
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <tbody>
+            <tr>
+                <td><strong>Ticket ID: </strong></td>
+                <td>{{ticket.id}}</td>
+            </tr>
+            <tr>
+                <td><strong>Type: </strong></td>
+                <td><a href="/type/{{ticket.type.id}}">{{ticket.type.label}}</a></td>
+            </tr>
+            <tr>    
+                <td><strong>Created: </strong></td>
+                <td>{{ticket.created|date:"Y/m/d H:i:s"}}</td>
+            </tr>
+            <tr>    
+                <td><strong>Opened: </strong></td>
+                <td>{{ticket.opened|date:"Y/m/d H:i:s"}}</td>
+            </tr>
+            <tr>    
+                <td><strong>Responded: </strong></td>
+                <td>{{ticket.responded|date:"Y/m/d H:i:s"}}</td>
+            </tr>
+            <tr>    
+                <td><strong>Time to initial reply: </strong></td>
+                <td>{{ ticket.responded|sub:ticket.opened }}</td>
+            </tr>
+           <tr>    
+                <td><strong>Original Affirmer: </strong></td>
+                <td>{{ticket.affirmer}}</td>
+           </tr>
+	   <tr>    
+                <td><strong>Original Team: </strong></td>
+                <td>{{ticket.team}}</td>
+           </tr>
+	   <tr>    
+                <td><strong>Originating System: </strong></td>
+                <td>{{ticket.get_system_display}}</td>
+           </tr>
+	   <tr>    
+                <td><strong>Ticket Difficulty: </strong></td>
+                <td>{{ticket.get_difficulty_display}}</td>
+            </tr>
+             <tr>    
+                <td><strong>Notes: </strong></td>
+                <td>{{ticket.notes}}</td>
+            </tr>
+             <tr>    
+                <td><strong>Notes: </strong></td>
+                <td>{{ticket.notes}}</td>
+            </tr>
+             <tr>    
+                <td><strong>Reference: </strong></td>
+                <td><a href="{{ticket.reference}}" target="_blank">{{ticket.reference}}</a></td>
+            </tr>
+             <tr>    
+                <td><strong>Contributors: </strong></td>
+                <td>{{ticket.contributors}}</td>
+            </tr>
+             <tr>    
+                <td><strong>Fix: </strong></td>
+                <td>{{ticket.fix}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

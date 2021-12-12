@@ -24,7 +24,7 @@ class TimeCalc():
     BD_STOP = 17
     
     def _get_beginning_of_day(self,event: EVENT) -> EVENT:
-        return fromisoformat(f"{self._get_day_string(event)} {self.BD_START}")
+        return fromisoformat(f"{self._get_day_string(event)} {self.BD_START}:00")
 
     def _get_end_of_day(self,event: EVENT) -> EVENT:
         return fromisoformat(f"{self._get_day_string(event)} {self.BD_STOP}")

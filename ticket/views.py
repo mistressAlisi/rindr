@@ -7,9 +7,12 @@ from django.db.models import F
 from .models import Ticket
 from django.core import serializers
 from datetime import datetime as dt
-import json
+from BI.deltaV2 import TimeCalc as _TimeCalc
+import json,csv
 from type.models import Type
-from ticket.models import Ticket,TicketMeanTimes
+from ticket.models import Ticket,TicketMeanTimes,TicketWeeklyResponseTimes
+
+TimeCalc =  _TimeCalc()
 
 def login(request):
     context = {}
@@ -30,7 +33,8 @@ def login_action(request):
 @login_required
 def home(request):
     ticket_data = Ticket.objects.all().order_by('ticket_id')[:10]
-    context = {"ticket_data":ticket_data}
+    weekly_data = TicketWeeklyResponseTimes.objects.all()[:5]
+    context = {"ticket_data":ticket_data,"weekly_data":weekly_data}
     return render(request, 'home.html', context)
 
 @login_required
@@ -64,7 +68,8 @@ def table(request):
 
 @login_required
 def ticket(request,ticket):
-    data = Ticket.objects.get(id = ticket).order_by('ticket_id')
+    # data = Ticket.objects.get(id = ticket).order_by('ticket_id')
+    data = Ticket.objects.get(id = ticket)
     context = {"ticket":data}
     return render(request, 'ticket.html', context)
 
@@ -84,3 +89,28 @@ def ticket_export(request,ticket):
 def ticket_response_chart_data(request):
     data = serializers.serialize("json", TicketMeanTimes.objects.all()[:5])    
     return HttpResponse(data) 
+
+
+@login_required
+def ticket_weekly_chart_data(request):
+    data = serializers.serialize("json", TicketWeeklyResponseTimes.objects.all()[:5])    
+    return HttpResponse(data) 
+
+#@login_required
+def ticket_export_csv(request):
+    tickets = Ticket.objects.filter()
+    response = HttpResponse(content_type='text/csv',headers={'Content-Disposition':'attachment;filename="all_tickets.csv"'})
+    writer = csv.writer(response,delimiter="\t")
+    writer.writerow(['id','reference','developer','platform','difficulty','category','opened','responded','contributors','resolution','time-to-initial-resp.','core-hours','elapsed'])
+    for ticket in tickets:
+        delta = ticket.responded - ticket.opened
+        elapsed = TimeCalc.business_lapse(ticket.opened,ticket.responded)
+        if (elapsed is False):
+            core_hours = False
+            elapsed = "00:00:00"
+        else:
+            core_hours=  True
+        writer.writerow([ticket.id,ticket.reference,ticket.affirmer,ticket.get_system_display(),ticket.difficulty,ticket.type.label,ticket.opened,ticket.responded,ticket.contributors,ticket.notes,delta,core_hours,elapsed])
+        ticket.exported = True
+
+    return response

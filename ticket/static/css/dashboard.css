@@ -1,5 +1,6 @@
 body {
   font-size: .875rem;
+  font-family: 'EB Garamond', serif;
 }
 
 .feather {
@@ -70,11 +71,12 @@ body {
  */
 
 .navbar-brand {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  font-size: 1rem;
+  padding-top: 1.25rem;
+  padding-bottom: .2rem;
+  font-size: 20px;
   background-color: rgba(0, 0, 0, .25);
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+  font-family: 'Ballet', cursive;
 }
 
 .navbar .navbar-toggler {

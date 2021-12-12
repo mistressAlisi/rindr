@@ -32,9 +32,11 @@ urlpatterns = [
     path('ticket/<int:ticket>',ticket_views.ticket),
     path('ticket/export/ticket_<int:ticket>.json',ticket_views.ticket_export),
     path('ticket/export/all_tickets.json',ticket_views.ticket_export_all),
+    path('ticket/export/all_tickets.csv',ticket_views.ticket_export_csv),
     path('type',type_views.table),
     path('chart/type/top',type_views.type_chart_data),
     path('chart/ticket/times',ticket_views.ticket_response_chart_data),
+    path('chart/ticket/weekly',ticket_views.ticket_weekly_chart_data),
     path('admin/', admin.site.urls)
 ]
 

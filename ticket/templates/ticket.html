@@ -1,7 +1,7 @@
 {% extends 'dashboard.html' %}
 {% load mathfilters %}
 {% block bootstrap5_title %}
-Ticket View: # {{ticket.id}}
+Rindr: Ticket View: # {{ticket.id}}
 {% endblock %}
 {% block dashboard_name %}Ticket view: # {{ticket.id}} {% endblock %}
 {%block dashboard_exports %}
@@ -44,6 +44,18 @@ Ticket View: # {{ticket.id}}
            <tr>    
                 <td><strong>Original Affirmer: </strong></td>
                 <td>{{ticket.affirmer}}</td>
+           </tr>
+	   <tr>    
+                <td><strong>Original Team: </strong></td>
+                <td>{{ticket.team}}</td>
+           </tr>
+	   <tr>    
+                <td><strong>Originating System: </strong></td>
+                <td>{{ticket.get_system_display}}</td>
+           </tr>
+	   <tr>    
+                <td><strong>Ticket Difficulty: </strong></td>
+                <td>{{ticket.get_difficulty_display}}</td>
             </tr>
              <tr>    
                 <td><strong>Notes: </strong></td>
@@ -64,7 +76,20 @@ Ticket View: # {{ticket.id}}
              <tr>    
                 <td><strong>Fix: </strong></td>
                 <td>{{ticket.fix}}</td>
-            </tr>
+             </tr>
+	     {% if ticket.regression == True %}
+	      <tr>    
+                <td><strong>Regression URL: </strong></td>
+                <td>{{ticket.regression_url}}</td>
+              </tr>
+	      {% else %}
+	    <tr>    
+                <td colspan="2"><strong>Not a regression-related ticket.</strong></td>
+                
+              </tr>
+	      
+	      {% endif %}
+	      
         </tbody>
     </table>
 </div>

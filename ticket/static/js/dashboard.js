@@ -78,5 +78,7 @@ function draw_time_chart(data) {
     }
 })
 };
+
 $.getJSON("/chart/type/top",draw_type_chart);
 $.getJSON("/chart/ticket/times",draw_time_chart);
+

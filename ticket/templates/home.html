@@ -1,12 +1,16 @@
 {% extends 'dashboard.html' %}
 {% load mathfilters %}
 {% block bootstrap5_title %}
-Ticketing System Dashboard   
+Rindr: Main Dashboard   
 {% endblock %}
 {%block dashboard_exports %}
           <div class="btn-group me-2">
             <a href="/ticket/export/all_tickets.json">
-                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Export JSON</button>
+            </a>
+            &#160;
+            <a href="/ticket/export/all_tickets.csv">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Export CSV</button>
             </a>
           </div>
           </button>
@@ -14,14 +18,18 @@ Ticketing System Dashboard
 {% block dashboard_content %}
       <div class="container-flex">
         <div class="row">
-            <div class="col-4">
+          <div class="col-5">
             {% include "dashboard_chart_1.html" %}
             </div>
             
-             <div class="col-7 col-xl-8">
+             <div class="col-5 col-xl-6">
             {% include "dashboard_chart_2.html" %}
             </div>
-            
+
+	     <div class="col-7 col-xl-8">
+	       {% include "dashboard_chart_3.html" %}
+	     </div>
+	     
            
         </div>
       </div>

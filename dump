@@ -1,0 +1,13 @@
+
+
+WORKING=/opt/rindr/tmp
+sudo su pyserver <<HERE
+
+rm -rf $WORKING
+mkdir -p $WORKING
+cd $WORKING
+
+export PGPASSWORD=freya
+# Also see rindr.settings.
+pg_dump rindr -U rindr -h localhost > e1.sql
+HERE

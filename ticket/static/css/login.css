@@ -1,6 +1,7 @@
 html,
 body {
   height: 100%;
+  font-family: 'EB Garamond', serif;
 }
 
 body {
@@ -9,6 +10,7 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #f5f5f5;
+ font-family: 'EB Garamond', serif;
 }
 
 .form-signin {
@@ -16,6 +18,7 @@ body {
   max-width: 330px;
   padding: 15px;
   margin: auto;
+font-family: 'EB Garamond', serif;
 }
 
 .form-signin .checkbox {
@@ -36,5 +39,12 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+ font-family: 'EB Garamond', serif;
+}
+.branding {
+ font-family: 'Ballet', cursive;   
 }
 
+.form-control, label,button,p {
+      font-family: 'EB Garamond', serif;
+}
