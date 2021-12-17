@@ -101,16 +101,20 @@ def ticket_export_csv(request):
     tickets = Ticket.objects.filter()
     response = HttpResponse(content_type='text/csv',headers={'Content-Disposition':'attachment;filename="all_tickets.csv"'})
     writer = csv.writer(response,delimiter="\t")
-    writer.writerow(['id','reference','developer','platform','difficulty','category','opened','responded','contributors','resolution','time-to-initial-resp.','core-hours','elapsed'])
+    writer.writerow(['id','reference','developer','platform','difficulty','category','opened date','opened timestamp','responded date','responded timestamp','closed','closed timestamp','contributors','resolution','time-to-initial-resp.','core-hours','elapsed to response','elapsed to close'])
     for ticket in tickets:
         delta = ticket.responded - ticket.opened
         elapsed = TimeCalc.business_lapse(ticket.opened,ticket.responded)
         if (elapsed is False):
             core_hours = False
-            elapsed = "00:00:00"
+            elapsed = 0 
+            elapsed_to_close = 0
         else:
             core_hours=  True
-        writer.writerow([ticket.id,ticket.reference,ticket.affirmer,ticket.get_system_display(),ticket.difficulty,ticket.type.label,ticket.opened,ticket.responded,ticket.contributors,ticket.notes,delta,core_hours,elapsed])
+            elapsed_to_close = TimeCalc.business_lapse(ticket.opened,ticket.closed)
+            elapsed_to_close = elapsed_to_close.total_seconds() / 60
+            elapsed = elapsed.total_seconds() / 60
+        writer.writerow([ticket.id,ticket.reference,ticket.affirmer,ticket.get_system_display(),ticket.difficulty,ticket.type.label,ticket.opened.stftime("%m/%d/%Y"),ticket.opened,ticket.responded.stftime("%m/%d/%Y"),ticket.responded,ticket.closed.stftime("%m/%d/%Y"),ticket.closed,ticket.contributors,ticket.notes,delta,core_hours,elapsed,elapsed_to_close])
         ticket.exported = True
 
     return response

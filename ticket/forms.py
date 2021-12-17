@@ -15,10 +15,9 @@ class TicketForm(forms.ModelForm):
         widgets = {
             'notes':'TextInput'
             },
-    opened = forms.DateTimeField(widget=TextInput(attrs={"type": "datetime-local","step":1,"value":datetime.now().isoformat('T').split(".")[0]
-}))
-    responded = forms.DateTimeField(widget=TextInput(attrs={"type": "datetime-local","step":1,"value":datetime.now().isoformat('T').split(".")[0]
-}))
+    opened = forms.DateTimeField(widget=TextInput(attrs={"type": "datetime-local","step":1,"value":datetime.now().isoformat('T').split(".")[0]}))
+    responded = forms.DateTimeField(widget=TextInput(attrs={"type": "datetime-local","step":1,"value":datetime.now().isoformat('T').split(".")[0]}))
+    closed = forms.DateTimeField(widget=TextInput(attrs={"type": "datetime-local","step":1,"value":datetime.now().isoformat('T').split(".")[0]}))
     affirmer = forms.CharField(widget=TextInput(attrs={}))
     team  = forms.CharField(widget=TextInput(attrs={}))
     notes = forms.CharField(widget=TextInput(attrs={}))
