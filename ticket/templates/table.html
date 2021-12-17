@@ -24,6 +24,7 @@ Rindr: All Tickets
               <th scope="col">Affirmer</th>
               <th scope="col">Opened</th>
               <th scope="col">Responded</th>
+              <th scope="col">Closed</th>
               <th scope="col">Response Time</td>
               <th scope="col">Reference</td>
               <th scope="col">Contributors</th>
@@ -39,6 +40,7 @@ Rindr: All Tickets
                 <td>{{ticket.opened|date:"Y/m/d H:i:s"}}</td>
                 <td>{{ticket.responded|date:"Y/m/d H:i:s"}}</td>
                 <td>{{ ticket.responded|sub:ticket.opened }}</td>
+                <td>{{ticket.closed|date:"Y/m/d H:i:s"}}</td>
                 <td><a href="{{ticket.reference}}" target="_blank">Open</a></td>
                 <td>{{ticket.contributors}}</td>
                 <td>{{ticket.notes}}</td>
