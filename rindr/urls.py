@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from ticket import views as ticket_views
 from type import views as type_views
+from Cause import views as cause_views
 urlpatterns = [
     path('login/',ticket_views.login),
     path('login/action',ticket_views.login_action),
@@ -24,9 +25,14 @@ urlpatterns = [
     path('new/create',ticket_views.new_action),
     path('type/new',type_views.new),
     path('type/new/create',type_views.new_action),
-    path('type/<int:type>',type_views.type),    
+    path('type/<int:type>',type_views.type),
     path('type/export/tickets_type-<int:type>.json',type_views.type_export),
     path('type/export/all_types.json',type_views.type_export_all),
+    path('cause/new',cause_views.new),
+    path('cause/new/create',cause_views.new_action),
+    path('cause/<int:cause>',cause_views.cause),
+    path('cause/export/tickets_cause-<int:cause>.json',cause_views.cause_export),
+    path('cause/export/all_causes.json',cause_views.cause_export_all),
     path('table',ticket_views.table),
     path('',ticket_views.home),
     path('ticket/<int:ticket>',ticket_views.ticket),
@@ -34,6 +40,7 @@ urlpatterns = [
     path('ticket/export/all_tickets.json',ticket_views.ticket_export_all),
     path('ticket/export/all_tickets.csv',ticket_views.ticket_export_csv),
     path('type',type_views.table),
+    path('cause',cause_views.table),
     path('chart/type/top',type_views.type_chart_data),
     path('chart/ticket/times',ticket_views.ticket_response_chart_data),
     path('chart/ticket/weekly',ticket_views.ticket_weekly_chart_data),
