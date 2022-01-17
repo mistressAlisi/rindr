@@ -21,6 +21,7 @@ Rindr: All Tickets
             <tr>
               <th scope="col">#</th>
               <th scope="col">Type</th>
+              <th scope="col">Cause</th>
               <th scope="col">Affirmer</th>
               <th scope="col">Opened</th>
               <th scope="col">Responded</th>
@@ -36,6 +37,7 @@ Rindr: All Tickets
                 <tr>
                 <td><a href="/ticket/{{ticket.id}}">#{{ticket.id}}</a></td>
                 <td><a href="/type/{{ticket.type.id}}">{{ticket.type.label}}</a></td>
+                <td><a href="/cause/{{ticket.cause.id}}">{{ticket.cause.label}}</a></td>
                 <td>{{ticket.affirmer}}</td>
                 <td>{{ticket.opened|date:"Y/m/d H:i:s"}}</td>
                 <td>{{ticket.responded|date:"Y/m/d H:i:s"}}</td>

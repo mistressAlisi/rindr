@@ -25,6 +25,10 @@ Rindr: Ticket View: # {{ticket.id}}
                 <td><strong>Type: </strong></td>
                 <td><a href="/type/{{ticket.type.id}}">{{ticket.type.label}}</a></td>
             </tr>
+            <tr>
+                <td><strong>Cause: </strong></td>
+                <td><a href="/cause/{{ticket.cause.id}}">{{ticket.cause.label}}</a></td>
+            </tr>
             <tr>    
                 <td><strong>Created: </strong></td>
                 <td>{{ticket.created|date:"Y/m/d H:i:s"}}</td>
