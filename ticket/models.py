@@ -17,7 +17,7 @@ class Ticket(models.Model):
     updated = models.DateTimeField(verbose_name='Ticket Updated',auto_now_add=True)
     opened = models.DateTimeField(verbose_name='Ticket Initially Opened')
     responded = models.DateTimeField(verbose_name='Ticket Initial Response')
-    closed = models.DateTimeField(verbose_name='Ticket Closed/Resolved')
+    closed = models.DateTimeField(verbose_name='Ticket Closed/Resolved', null=True)
     affirmer = models.TextField(max_length=200,verbose_name='Ticket for Affirmer')
     notes = models.TextField(verbose_name='Ticket Notes',null=True)
     reference = models.TextField(verbose_name='Ticket Reference',null=True)
