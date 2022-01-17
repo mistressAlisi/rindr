@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib import admin
 from type.models import Type
+from Cause.models import Cause
 from django.contrib.auth.models import User
 # Create your models here.
 
@@ -10,6 +11,7 @@ class Ticket(models.Model):
     DifficultyTable = (('1'),('1  - Simplest (Did you RTFM?)')),(('2'),('2')),(('3'),('3')),(('4'),('4')),(('5'),('5')),(('6'),('6 - Bloody hard. (My name is Neo.)'))
     ticket_id = models.TextField(max_length=200,verbose_name='Ticket ID')
     type = models.ForeignKey(Type,verbose_name = 'Ticket Type',on_delete=models.RESTRICT)
+    cause = models.ForeignKey(Cause,verbose_name = 'Ticket Cause',on_delete=models.RESTRICT, null=True)
     creator = models.ForeignKey(User,verbose_name = "User",on_delete=models.RESTRICT,null=True)
     created = models.DateTimeField(auto_now_add=True,editable=False,verbose_name='Ticket Created')
     updated = models.DateTimeField(verbose_name='Ticket Updated',auto_now_add=True)
