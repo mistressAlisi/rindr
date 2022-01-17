@@ -11,7 +11,7 @@ class DateInput(forms.DateInput):
 class TicketForm(forms.ModelForm):
     class Meta:
         model = Ticket
-        fields = ['type','opened','responded','affirmer','notes','reference','contributors','fix','team','difficulty','system','regression','regression_url']
+        fields = ['cause', 'type','opened','responded','affirmer','notes','reference','contributors','fix','team','difficulty','system','regression','regression_url']
         widgets = {
             'notes':'TextInput'
             },
