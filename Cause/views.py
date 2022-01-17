@@ -41,16 +41,16 @@ def table(request):
 
 
 @login_required
-def cause(request,type):
-    data = Cause.objects.get(id = type)
+def cause(request, cause):
+    data = Cause.objects.get(id = cause)
     tickets = Ticket.objects.filter(cause_id= data).order_by('ticket_id')[:10]
-    context = {"type":data,"ticket_data":tickets}
+    context = {"cause":data,"ticket_data":tickets}
     return render(request, 'cause.html', context)
 
 @login_required
-def cause_export(request,type):
-    cause_data = serializers.serialize("json", Cause.objects.filter(id= type))
-    data = serializers.serialize("json", Ticket.objects.filter(cause_id= type))
+def cause_export(request,cause):
+    cause_data = serializers.serialize("json", Cause.objects.filter(id= cause))
+    data = serializers.serialize("json", Ticket.objects.filter(cause_id= cause))
     return HttpResponse(cause_data+","+data,content_type='application/force-download')
 
 @login_required
