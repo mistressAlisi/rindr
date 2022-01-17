@@ -1,0 +1,20 @@
+{% extends 'dashboard.html' %}
+{% load django_bootstrap5 %}
+{% block bootstrap5_title %}
+Create New Cause
+{% endblock %}
+{%block dashboard_name %} Create Ticket Cause {% endblock %}
+
+{% block dashboard_content %}
+    <form action="/cause/new/create" method="post" class="form" id="cause_form" onsubmit="create_cause(); return false;">
+  {% csrf_token %}
+
+  {% bootstrap_form new_cause %}
+
+  {% bootstrap_button button_type="submit" content="Create" %}
+
+
+</form>
+ <script src="/static/js/cause.js"></script>
+
+{% endblock %}
