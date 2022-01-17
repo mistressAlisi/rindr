@@ -24,7 +24,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['d858-54-209-167-118.ngrok.io','localhost','localhost:6000']
+ALLOWED_HOSTS = ['d858-54-209-167-118.ngrok.io','localhost','localhost:6000', '127.0.0.1', '127.0.0.1:8000']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'jquery',
     'dashboard',
+    'Cause',
     'mathfilters'
     
 ]
